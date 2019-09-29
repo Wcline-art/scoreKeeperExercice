@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* GLOBAL STYLE */
+body {
+  background-image: url("img/mur.jpg");
+  background-size: cover;
+  font-family: "Bangers", cursive;
+  color: #a50707;
+  text-shadow: 2px 2px 4px #999;
+}
+h1 {
+  font-size: 4rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  margin-top: 108px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.style-items {
+  color: rgb(165, 7, 7);
+  font-size: 15px;
+  line-height: 15px;
+  padding: 8px;
+  border-radius: 27px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  box-shadow: rgb(165, 7, 7) 5px 5px 15px 5px;
+  border: 2px solid rgb(165, 7, 7);
+  display: inline-block;
+}
+
+/* LAYOUT */
+
+/* container  */
