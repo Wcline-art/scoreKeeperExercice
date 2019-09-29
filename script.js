@@ -8,39 +8,38 @@ const buttonPlayer2 = document.querySelectorAll("button")[1];
 const buttonReset = document.querySelectorAll("button")[2];
 
 // lET variables
-let scorePl1 = 0;
-let scorePl2 = 0;
+let scorePl = 0;
 let scoreMax = 5;
 
 // Player 1
 function createScoreIntoSpanPlayer1() {
-  scorePlayer1.append(document.createTextNode(scorePl1));
+  scorePlayer1.append(document.createTextNode(scorePl));
 }
 
 function modifyScoreValueIntoPlayer1() {
-  scorePlayer1.innerText = scorePl1;
+  scorePlayer1.innerText = scorePl;
 }
 
 function boostScorePlayer1() {
-  if (scorePl1 < scoreMax && scorePl2 < scoreMax) {
-    scorePl1++;
-    scorePlayer1.innerText = scorePl1;
+  if (scorePl < scoreMax) {
+    scorePl++;
+    scorePlayer1.innerText = scorePl;
   }
 }
 
 // Player 2
 function createScoreIntoSpanPlayer2() {
-  scorePlayer2.append(document.createTextNode(scorePl2));
+  scorePlayer2.append(document.createTextNode(scorePl));
 }
 
 function modifyScoreValueIntoPlayer2() {
-  scorePlayer2.innerText = scorePl2;
+  scorePlayer2.innerText = scorePl;
 }
 
 function boostScorePlayer2() {
-  if (scorePl2 < scoreMax && scorePl1 < scoreMax) {
-    scorePl2++;
-    scorePlayer2.innerText = scorePl2;
+  if (scorePl < scoreMax) {
+    scorePl++;
+    scorePlayer2.innerText = scorePl;
   }
 }
 
@@ -59,8 +58,7 @@ function setWinnerScoreMax() {
 
 // Reset
 function resetScores() {
-  scorePl1 = 0;
-  scorePl2 = 0;
+  scorePl = 0;
   modifyScoreValueIntoPlayer1();
   modifyScoreValueIntoPlayer2();
 }
