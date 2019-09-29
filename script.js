@@ -5,31 +5,80 @@ const winnerScoreMax = document.querySelectorAll("span")[2];
 const input = document.querySelector("input");
 const buttonPlayer1 = document.querySelectorAll("button")[0];
 const buttonPlayer2 = document.querySelectorAll("button")[1];
-const reset = document.querySelectorAll("button")[2];
+const buttonReset = document.querySelectorAll("button")[2];
 
 // lET variables
-let inputScoreMax = input.value;
 let scorePl1 = 0;
 let scorePl2 = 0;
 let scoreMax = 5;
 
+// Player 1
+function createScoreIntoSpanPlayer1() {
+  scorePlayer1.append(document.createTextNode(scorePl1));
+}
+
+function modifyScoreValueIntoPlayer1() {
+  scorePlayer1.innerText = scorePl1;
+}
+
 function boostScorePlayer1() {
-  scorePlayer1.textContent = scorePl1;
-  scorePl1++;
+  if (scorePl1 < scoreMax && scorePl2 < scoreMax) {
+    scorePl1++;
+    scorePlayer1.innerText = scorePl1;
+  }
+}
+
+// Player 2
+function createScoreIntoSpanPlayer2() {
+  scorePlayer2.append(document.createTextNode(scorePl2));
+}
+
+function modifyScoreValueIntoPlayer2() {
+  scorePlayer2.innerText = scorePl2;
 }
 
 function boostScorePlayer2() {
-  scorePlayer2.textContent = scorePl2;
-  scorePl2++;
+  if (scorePl2 < scoreMax && scorePl1 < scoreMax) {
+    scorePl2++;
+    scorePlayer2.innerText = scorePl2;
+  }
 }
 
-function addScoreMaxInput() {
-  input.innerText = input.value;
+// Winner Score Max
+function createScoreIntoSpanWinnerScoreMax() {
+  winnerScoreMax.append(document.createTextNode(scoreMax));
 }
 
-function addScoreInWinnerScoreMax() {
-  winnerScoreMax.textContent = scoreMax;
+function modifyScoreValueIntoWinnerScoreMax() {
+  winnerScoreMax.innerText = scoreMax;
+}
+
+function setWinnerScoreMax() {
+  createScoreIntoSpanWinnerScoreMax();
+}
+
+// Reset
+function resetScores() {
+  scorePl1 = 0;
+  scorePl2 = 0;
+  modifyScoreValueIntoPlayer1();
+  modifyScoreValueIntoPlayer2();
+}
+
+// Function Global
+function setScoreMax() {
+  scoreMax = +input.value;
+  winnerScoreMax.innerText = +input.value;
+}
+
+function scoreKeeper() {
+  createScoreIntoSpanWinnerScoreMax();
+  createScoreIntoSpanPlayer1();
+  createScoreIntoSpanPlayer2();
 }
 
 buttonPlayer1.addEventListener("click", boostScorePlayer1);
 buttonPlayer2.addEventListener("click", boostScorePlayer2);
+buttonReset.addEventListener("click", resetScores);
+window.addEventListener("load", scoreKeeper);
+input.addEventListener("change", setScoreMax);
